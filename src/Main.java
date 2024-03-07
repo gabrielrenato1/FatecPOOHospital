@@ -6,69 +6,41 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Medico medico = new Medico();
-
-        medico.nome = "Josias Jorge Oliveira";
-        medico.crm = "CRM/SP 123456";
-        medico.telefone = "(11) 91234-5678";
-        medico.especialidade = "Fisioterapeuta";
-        medico.senha = "SenhaForte";
+        Medico medico = new Medico(
+                "Josias Jorge Oliveira", "CRM/SP 123456", "(11) 91234-5678",
+                "Fisioterapeuta", "SenhaForte"
+        );
 
         medico.mostrar();
 
-        Paciente paciente = new Paciente();
-
-        paciente.nome = "Maria Andrade Souza";
-        paciente.cpf = "123.456.789.00";
-        paciente.telefone = "(11) 91234-5678";
-        paciente.genero = "Feminino";
-        paciente.idade = 45;
+        Paciente paciente = new Paciente(
+                "Maria Andrade Souza", "123.456.789.00", "(11) 91234-5678"
+                ,"Feminino" ,45
+        );
 
         paciente.mostrar();
 
-        Recepcionista recepcionista = new Recepcionista();
+        Recepcionista recepcionista = new Recepcionista("Marcelo Vinicius Rocha", "009.876.543-21", "(11) 91234-5678", "SenhaGigante");
 
-        recepcionista.nome = "Marcelo Vinicius Rocha";
-        recepcionista.cpf = "009.876.543-21";
-        recepcionista.telefone = "(11) 91234-5678";
-        recepcionista.senha = "SenhaGigante";
+                recepcionista.mostrar();
 
-        recepcionista.mostrar();
-
-        Agenda agenda = new Agenda();
-
-        agenda.data = "2024-04-12";
-        agenda.hora = "15:30";
-        agenda.medico = medico.nome + "/" + medico.crm;
-        agenda.paciente = paciente.nome + "/" + paciente.cpf;
+        Agenda agenda = new Agenda("2024-04-12", "15:30", medico.getNome() + "/" + medico.getCrm(), paciente.getNome() + "/" + paciente.getCpf());
 
         agenda.mostrar();
 
-        Consulta consulta = new Consulta();
-
-        consulta.prontuario = 1552589;
-        consulta.data = "2024-04-12";
-        consulta.hora = "15:30";
-        consulta.medico = medico.nome + "/" + medico.crm;
-        consulta.paciente = paciente.nome + "/" + paciente.cpf;
-        consulta.motivo = "Dor no Joelho";
-        consulta.historico = "Joelho triste";
+        Consulta consulta = new Consulta(
+                1552589, "2024-04-12", "15:30",
+                medico.getNome() + "/" + medico.getCrm(), paciente.getNome() + "/" + paciente.getCpf(), "Dor no Joelho",
+                "Joelho triste"
+        );
 
         consulta.mostrar();
 
-        Exame exame = new Exame();
-
-        exame.consulta = consulta.prontuario;
-        exame.data = "2024-05-01";
-        exame.descritivo = "Teste de joelho";
+        Exame exame = new Exame(consulta.getProntuario(),"2024-05-01" ,"Teste de joelho");
 
         exame.mostrar();
 
-        Receita receita = new Receita();
-
-        receita.consulta = consulta.prontuario;
-        receita.data = "2024-05-01";
-        receita.descritivo = "Remédio de Joelho";
+        Receita receita = new Receita(consulta.getProntuario(), "2024-05-01", "Remédio de Joelho");
 
         receita.mostrar();
 
