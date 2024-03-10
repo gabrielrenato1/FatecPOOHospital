@@ -1,5 +1,7 @@
 package classes;
 
+import java.util.Objects;
+
 public class Paciente {
 
     private String nome;
@@ -10,7 +12,7 @@ public class Paciente {
 
     public Paciente(){}
 
-    public Paciente(String nome, String cpf, String telefone, String genero, int idade) {
+    public Paciente(String nome, String cpf, String telefone, String genero, int idade) throws Exception{
         setNome(nome);
         setCpf(cpf);
         setTelefone(telefone);
@@ -22,40 +24,95 @@ public class Paciente {
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNome(String nome) throws Exception {
+
+        if(Objects.equals(nome, "")){
+
+            this.nome = null;
+            throw new Exception("Ocorreu uma exceção – Valores padrões definidos");
+
+        }else{
+
+            this.nome = nome;
+
+        }
+
     }
 
     public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
+    public void setCpf(String cpf) throws Exception{
+
+        if(Objects.equals(cpf, "")){
+
+            this.cpf = null;
+            throw new Exception("Ocorreu uma exceção – Valores padrões definidos");
+
+        }else{
+
+            this.cpf = cpf;
+
+        }
+
     }
 
     public String getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
+    public void setTelefone(String telefone) throws Exception {
+
+        if(Objects.equals(telefone, "")){
+
+            this.telefone = null;
+            throw new Exception("Ocorreu uma exceção – Valores padrões definidos");
+
+        }else{
+
+            this.telefone = telefone;
+
+        }
+
     }
 
     public String getGenero() {
         return genero;
     }
 
-    public void setGenero(String genero) {
-        this.genero = genero;
+    public void setGenero(String genero) throws Exception {
+
+        if(Objects.equals(genero, "") || !(Objects.equals(genero, "masculino") || Objects.equals(genero, "feminino"))){
+
+            this.genero = null;
+            throw new Exception("Ocorreu uma exceção – Valores padrões definidos");
+
+        }else{
+
+            this.genero = genero;
+
+        }
+
     }
 
     public int getIdade() {
         return idade;
     }
 
-    public void setIdade(int idade) {
-        this.idade = idade;
+    public void setIdade(int idade) throws Exception {
+
+        if(idade < 0){
+
+            this.idade = 0;
+            throw new Exception("Ocorreu uma exceção – Valores padrões definidos");
+
+        }else{
+
+            this.idade = idade;
+
+        }
+
     }
 
     public void cadastrar(){}

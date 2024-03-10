@@ -1,5 +1,7 @@
 package classes;
 
+import java.util.Objects;
+
 public class Recepcionista {
 
     private String nome;
@@ -9,7 +11,7 @@ public class Recepcionista {
 
     public Recepcionista(){}
 
-    public Recepcionista(String nome, String cpf, String telefone, String senha) {
+    public Recepcionista(String nome, String cpf, String telefone, String senha) throws Exception {
         setNome(nome);
         setCpf(cpf);
         setTelefone(telefone);
@@ -20,32 +22,76 @@ public class Recepcionista {
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNome(String nome) throws Exception {
+
+        if(Objects.equals(nome, "")){
+
+            this.nome = null;
+            throw new Exception("Ocorreu uma exceção – Valores padrões definidos");
+
+        }else{
+
+            this.nome = nome;
+
+        }
+
     }
 
     public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
+    public void setCpf(String cpf) throws Exception {
+
+        if(Objects.equals(cpf, "")){
+
+            this.cpf = null;
+            throw new Exception("Ocorreu uma exceção – Valores padrões definidos");
+
+        }else{
+
+            this.cpf = cpf;
+
+        }
+
     }
 
     public String getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
+    public void setTelefone(String telefone) throws Exception {
+
+        if(Objects.equals(telefone, "")){
+
+            this.telefone = null;
+            throw new Exception("Ocorreu uma exceção – Valores padrões definidos");
+
+        }else{
+
+            this.telefone = telefone;
+
+        }
+
     }
 
     public String getSenha() {
         return senha;
     }
 
-    public void setSenha(String senha) {
-        this.senha = senha;
+    public void setSenha(String senha) throws Exception {
+
+        if(Objects.equals(senha, "")){
+
+            this.senha = null;
+            throw new Exception("Ocorreu uma exceção – Valores padrões definidos");
+
+        }else{
+
+            this.senha = senha;
+
+        }
+
     }
 
     public void acessar(){}
