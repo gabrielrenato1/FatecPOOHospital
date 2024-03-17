@@ -130,4 +130,40 @@ public class Medico {
 
     }
 
+    public Exame solicitarExame(Consulta consulta){
+
+        Exame exame = null;
+
+        try{
+
+            exame = new Exame(consulta.getProntuario(),"2024-05-01" ,"Teste de joelho");
+
+        } catch (Exception err) {
+
+            System.out.println(err.getMessage());
+
+        }
+
+        return exame;
+
+    }
+
+    public Receita preescreverReceita(Consulta consulta){
+
+        Receita receita = null;
+
+        try{
+
+            receita = new Receita(consulta.getProntuario(), "2024-05-01", "Remédio de Joelho");
+
+        } catch (Exception err) {
+
+            System.out.println(err.getMessage());
+
+        }
+
+        return receita;
+
+    }
+
 }

@@ -5,7 +5,7 @@ import java.util.Objects;
 
 public class Exame {
 
-    private int consulta;
+    private Consulta consulta;
     private String data;
     private String descritivo;
 

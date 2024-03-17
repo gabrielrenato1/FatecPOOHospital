@@ -6,7 +6,7 @@ import java.util.Objects;
 
 public class Receita {
 
-    private int consulta;
+    private Consulta consulta;
     private String data;
     private String descritivo;
 

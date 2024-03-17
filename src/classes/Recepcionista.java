@@ -108,4 +108,44 @@ public class Recepcionista {
 
     }
 
+    public Paciente cadastrarPaciente() {
+
+        Paciente paciente = null;
+
+        try {
+
+            paciente = new Paciente(
+                    "Maria Andrade Souza", "123.456.789.00", "(11) 91234-5678",
+                    "feminino", 45
+            );
+
+        } catch (Exception err) {
+
+            System.out.println(err.getMessage());
+            return null;
+
+        }
+
+        return paciente;
+
+    }
+
+    public Consulta marcarConsulta(Paciente paciente, Medico medico){
+
+        Consulta consulta = null;
+
+        try{
+
+            consulta = new Consulta(1552589, "2024-04-12", "15:30", medico, paciente, "Dor no Joelho", "Joelho triste");
+
+        } catch (Exception err) {
+
+            System.out.println(err.getMessage());
+
+        }
+
+        return consulta;
+
+    }
+
 }
