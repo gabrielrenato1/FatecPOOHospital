@@ -130,39 +130,33 @@ public class Medico {
 
     }
 
-    public Exame solicitarExame(Consulta consulta){
-
-        Exame exame = null;
+    public void solicitarExame(Consulta consulta){
 
         try{
 
-            exame = new Exame(consulta.getProntuario(),"2024-05-01" ,"Teste de joelho");
+            Exame exame = new Exame(consulta,"2024-05-01" ,"Teste de joelho");
+            consulta.getExame().add(exame);
 
         } catch (Exception err) {
 
             System.out.println(err.getMessage());
 
         }
-
-        return exame;
 
     }
 
-    public Receita preescreverReceita(Consulta consulta){
-
-        Receita receita = null;
+    public void preescreverReceita(Consulta consulta){
 
         try{
 
-            receita = new Receita(consulta.getProntuario(), "2024-05-01", "Remédio de Joelho");
+            Receita receita = new Receita(consulta, "2024-05-01", "Remédio de Joelho");
+            consulta.getReceita().add(receita);
 
         } catch (Exception err) {
 
             System.out.println(err.getMessage());
 
         }
-
-        return receita;
 
     }
 

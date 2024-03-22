@@ -12,21 +12,21 @@ public class Receita {
 
     public Receita(){}
 
-    public Receita(int consulta, String data, String descritivo) throws Exception {
+    public Receita(Consulta consulta, String data, String descritivo) throws Exception {
         setConsulta(consulta);
         setData(data);
         setDescritivo(descritivo);
     }
 
-    public int getConsulta() {
+    public Consulta getConsulta() {
         return consulta;
     }
 
-    public void setConsulta(int consulta) throws Exception {
+    public void setConsulta(Consulta consulta) throws Exception {
 
-        if(consulta < 0){
+        if(consulta == null){
 
-            this.consulta = 0;
+            this.consulta = null;
             throw new Exception("Ocorreu uma exceção – Valores padrões definidos");
 
         }else{
@@ -85,7 +85,7 @@ public class Receita {
     public void mostrar(){
 
         System.out.printf("Receita:" +
-            "\nConsulta: " + getConsulta() +
+            "\nConsulta: " + getConsulta().getProntuario() +
             "\nData: " + getData() +
             "\nDescritivo: " + getDescritivo()
         );

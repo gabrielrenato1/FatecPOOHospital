@@ -25,15 +25,11 @@ public class Main {
 
             Consulta consulta = recepcionista.marcarConsulta(paciente, medico);
 
+            medico.solicitarExame(consulta);
+
+            medico.preescreverReceita(consulta);
+
             consulta.mostrar();
-
-            Exame exame = medico.solicitarExame(consulta);
-
-            exame.mostrar();
-
-            Receita receita = medico.preescreverReceita(consulta);
-
-            receita.mostrar();
 
         }catch (Exception err){
             System.out.println(err.getMessage());
