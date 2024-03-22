@@ -2,41 +2,19 @@ package classes;
 
 import java.util.Objects;
 
-public class Medico {
+public class Medico extends Funcionario {
 
-    private String nome;
     private String crm;
-    private String telefone;
     private String especialidade;
-    private String senha;
 
     public Medico(){}
 
     public Medico(String nome, String crm, String telefone, String especialidade, String senha) throws Exception{
-        setNome(nome);
         setCrm(crm);
+        setNome(nome);
         setTelefone(telefone);
-        setEspecialidade(especialidade);
         setSenha(senha);
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) throws Exception {
-
-        if(Objects.equals(nome, "")){
-
-            this.nome = null;
-            throw new Exception("Ocorreu uma exceção – Valores padrões definidos");
-
-        }else{
-
-            this.nome = nome;
-
-        }
-
+        setEspecialidade(especialidade);
     }
 
     public String getCrm() {
@@ -53,25 +31,6 @@ public class Medico {
         }else{
 
             this.crm = crm;
-
-        }
-
-    }
-
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(String telefone) throws Exception {
-
-        if(Objects.equals(telefone, "")){
-
-            this.telefone = null;
-            throw new Exception("Ocorreu uma exceção – Valores padrões definidos");
-
-        }else{
-
-            this.telefone = telefone;
 
         }
 
@@ -95,27 +54,6 @@ public class Medico {
         }
 
     }
-
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) throws Exception {
-
-        if(Objects.equals(senha, "")){
-
-            this.senha = null;
-            throw new Exception("Ocorreu uma exceção – Valores padrões definidos");
-
-        }else{
-
-            this.senha = senha;
-
-        }
-
-    }
-
-    public void acessar(){}
 
     public void mostrar(){
 

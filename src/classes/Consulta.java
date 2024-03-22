@@ -5,13 +5,9 @@ import java.util.ArrayList;
 import java.util.Objects;
 import java.util.List;
 
-public class Consulta {
+public class Consulta extends Agenda{
 
     private int prontuario;
-    private String data;
-    private String hora;
-    private Medico medico;
-    private Paciente paciente;
     private Agenda agenda;
     private String motivo;
     private String historico;
@@ -69,85 +65,6 @@ public class Consulta {
         }else{
 
             this.prontuario = prontuario;
-
-        }
-
-    }
-
-    public String getData() {
-        return data;
-    }
-
-    public void setData(String data) throws Exception {
-
-        LocalDate dataReceita = LocalDate.parse(data);
-        LocalDate dataAtual = LocalDate.now();
-
-        if(dataReceita.isBefore(dataAtual) || Objects.equals(data, "")){
-
-            this.data = null;
-            throw new Exception("Ocorreu uma exceção – Valores padrões definidos");
-
-        }else{
-
-            this.data = data;
-
-        }
-
-    }
-
-    public String getHora() {
-        return hora;
-    }
-
-    public void setHora(String hora) throws Exception {
-
-        if(Objects.equals(hora, "")){
-
-            this.hora = null;
-            throw new Exception("Ocorreu uma exceção – Valores padrões definidos");
-
-        }else{
-
-            this.hora = hora;
-
-        }
-
-    }
-
-    public Medico getMedico() {
-        return medico;
-    }
-
-    public void setMedico(Medico medico) throws Exception {
-
-        if(Objects.equals(medico, "")){
-
-            this.medico = null;
-            throw new Exception("Ocorreu uma exceção – Valores padrões definidos");
-
-        }else{
-
-            this.medico = medico;
-
-        }
-
-    }
-
-    public Paciente getPaciente() {
-        return paciente;
-    }
-
-    public void setPaciente(Paciente paciente) throws Exception{
-
-        if(Objects.equals(paciente, "")){
-
-            this.paciente = null;
-            throw new Exception("Ocorreu uma exceção – Valores padrões definidos");
-
-        }else{
-
-            this.paciente = paciente;
 
         }
 
