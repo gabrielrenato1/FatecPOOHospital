@@ -67,4 +67,11 @@ public abstract class Funcionario {
 
     public void acessar(){}
 
+    public void mostrar(){
+
+        System.out.printf("\nNome: " + getNome() +
+                "\nTelefone: " + getTelefone());
+
+    }
+
 }

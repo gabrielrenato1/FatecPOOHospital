@@ -1,9 +1,13 @@
 package classes;
 
+import java.lang.module.ModuleDescriptor;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.List;
+import java.util.Date;
+import java.time.format.DateTimeFormatter;
 
 public class Consulta extends Agenda{
 
@@ -13,7 +17,6 @@ public class Consulta extends Agenda{
     private String historico;
     private List<Receita> receita = new ArrayList<Receita>();
     private List<Exame> exame = new ArrayList<Exame>();
-
 
     public Consulta(){}
 
@@ -25,6 +28,13 @@ public class Consulta extends Agenda{
         setPaciente(paciente);
         setMotivo(motivo);
         setHistorico(historico);
+    }
+
+    @Override
+    public String getData() {
+        LocalDate dataAgenda = LocalDate.parse(super.getData());
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        return dataAgenda.format(formatter);
     }
 
     public Agenda getAgenda() {
@@ -118,17 +128,14 @@ public class Consulta extends Agenda{
 
     public void atualizar(){}
 
+    @Override
     public void mostrar(){
 
         System.out.printf("Consulta:" +
-            "\nProntuário: " + getProntuario() +
-            "\nData: " + getData() +
-            "\nHora: " + getHora() +
-            "\nMédico: " + getMedico().getNome() + " | " + getMedico().getCrm() +
-            "\nPaciente: " + getPaciente().getNome() + " | " + getPaciente().getCpf() +
             "\nMotivo: " + getMotivo() +
             "\nHistórico: " + getHistorico()
         );
+        super.mostrar();
 
         System.out.println("\n");
 

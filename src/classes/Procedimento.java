@@ -51,4 +51,13 @@ public class Procedimento {
 
     public void consultar(){}
 
+    public void mostrar(){
+
+        System.out.printf(
+                "\nData: " + getData() +
+                "\nDescritivo: " + getDescritivo()
+        );
+
+    }
+
 }

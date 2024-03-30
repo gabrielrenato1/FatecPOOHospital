@@ -1,6 +1,7 @@
 package classes;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.Objects;
 
@@ -13,14 +14,19 @@ public class Receita extends Procedimento{
         setDescritivo(descritivo);
     }
 
+    @Override
+    public String getData() {
+        LocalDate dataAgenda = LocalDate.parse(super.getData());
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        return dataAgenda.format(formatter);
+    }
+
     public void preescrever(){}
 
     public void mostrar(){
 
-        System.out.printf("Receita:" +
-            "\nData: " + getData() +
-            "\nDescritivo: " + getDescritivo()
-        );
+        System.out.print("Receita:");
+        super.mostrar();
 
         System.out.println("\n");
 

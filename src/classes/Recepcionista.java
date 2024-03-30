@@ -34,13 +34,13 @@ public class Recepcionista extends Funcionario{
 
     }
 
+    @Override
     public void mostrar(){
 
         System.out.printf("Recepcionista:" +
-            "\nNome: " + getNome() +
-            "\nCPF: " + getCpf() +
-            "\nTelefone: " + getTelefone()
+            "\nCPF: " + getCpf()
         );
+        super.mostrar();
 
         System.out.println("\n");
 

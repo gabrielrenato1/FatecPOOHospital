@@ -102,14 +102,12 @@ public class Agenda {
 
     public void mostrar(){
 
-        System.out.printf("Agenda:" +
+        System.out.printf(
             "\nData: " + getData() +
             "\nHora: " + getHora() +
             "\nMédico: " + getMedico().getNome() + " | " + getMedico().getCrm() +
             "\nPaciente: " + getPaciente().getNome() + " | " + getPaciente().getCpf()
         );
-
-        System.out.println("\n");
 
     }
 

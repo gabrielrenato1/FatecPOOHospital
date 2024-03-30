@@ -55,14 +55,14 @@ public class Medico extends Funcionario {
 
     }
 
+    @Override
     public void mostrar(){
 
         System.out.printf("Médico:" +
-            "\nNome: " + getNome() +
             "\nCRM: " + getCrm() +
-            "\nTelefone: " + getTelefone() +
             "\nEspecialidade: " + getEspecialidade()
         );
+        super.mostrar();
 
         System.out.println("\n");
 
